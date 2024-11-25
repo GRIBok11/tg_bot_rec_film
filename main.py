@@ -18,12 +18,10 @@ model = ChatGroq(
 
 chain = model | StrOutputParser()
 
-def get_movie_recommendations(genre: str) -> str:
+def get_movie_recommendations(genre: str) -> str:   
+    prompt = f"Пожалуйста, порекомендуй 5 лучших фильмов в жанре '{genre}' и обязательно напиши ответ на русском языке."
+    return chain.invoke(prompt)
 
-    
-
-
-    return chain.invoke(f"Порекомендуй 5 лучших фильмов в жанре '{genre}'.")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(
