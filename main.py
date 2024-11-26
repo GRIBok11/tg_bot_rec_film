@@ -25,7 +25,7 @@ def get_movie_recommendations(genre: str) -> str:
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(
-        "Привет! Напиши жанр фильма, и я предложу 5 лучших фильмов по твоему запросу!"
+        "Привет! Напиши жанр фильма, и я предложу 5 случайных фильмов по твоему запросу!"
     )
 
 
